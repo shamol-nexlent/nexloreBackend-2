@@ -46,3 +46,4 @@ export const removeUser = (userId: number)=>{
 console.log("removeuser", removeUser(userIdToRemove))
 // removeUser(userIdToRemove)
 // console.log(usersArray)
+
