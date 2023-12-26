@@ -2,10 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.removepost = void 0;
 const postArray = [
-    { id: 1, title: "title1", description: "lorem lorem", createdAt: {}, createdBy: 1 },
-    { id: 2, title: "title1", description: "lorem lorem", createdAt: {}, createdBy: 2 },
-    { id: 3, title: "title1", description: "lorem lorem", createdAt: {}, createdBy: 3 },
-    { id: 4, title: "title1", description: "lorem lorem", createdAt: {}, createdBy: 4 }
+    { id: 1, title: "title1", description: "lorem lorem", createdAt: new Date(), createdBy: 1 },
+    { id: 2, title: "title1", description: "lorem lorem", createdAt: new Date(), createdBy: 2 },
+    { id: 3, title: "title1", description: "lorem lorem", createdAt: new Date(), createdBy: 3 },
+    { id: 4, title: "title1", description: "lorem lorem", createdAt: new Date(), createdBy: 4 }
 ];
 const getPost = (postId) => {
     if (!postId) {
@@ -25,15 +25,15 @@ const findPost = (postId) => {
         return findingPost;
     }
 };
-console.log("findPOst 1", findPost(1));
-const GettingAllPost = () => {
-    return postArray;
+// console.log("findPOst 1",findPost(1));
+const GettingAllPost = (arr) => {
+    return arr;
 };
-console.log(GettingAllPost);
+console.log(GettingAllPost(postArray));
 const postIdToRemove = 3;
 const removepost = (postId) => {
     const removeElement = postArray.filter(user => user.id === postId);
     return removeElement;
 };
 exports.removepost = removepost;
-console.log((0, exports.removepost)(postIdToRemove));
+// console.log(removepost(postIdToRemove));

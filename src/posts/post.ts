@@ -1,17 +1,17 @@
-interface Ipost
+interface IPost
 {
     "id": number|string,
     "title": string,
     "description": string,
-    "createdAt": object,
+    "createdAt": Date,
     "createdBy":  number
 }
 
-const postArray:Ipost[]=[
-    {id:1,title:"title1",description:"lorem lorem",createdAt:{},createdBy:1},
-    {id:2,title:"title1",description:"lorem lorem",createdAt:{},createdBy:2},
-    {id:3,title:"title1",description:"lorem lorem",createdAt:{},createdBy:3},
-    {id:4,title:"title1",description:"lorem lorem",createdAt:{},createdBy:4}
+const postArray:IPost[]=[
+    {id:1,title:"title1",description:"lorem lorem",createdAt:new Date(),createdBy:1},
+    {id:2,title:"title1",description:"lorem lorem",createdAt:new Date(),createdBy:2},
+    {id:3,title:"title1",description:"lorem lorem",createdAt:new Date(),createdBy:3},
+    {id:4,title:"title1",description:"lorem lorem",createdAt:new Date(),createdBy:4}
 ]
 
 const getPost=(postId:number)=>{
@@ -33,12 +33,12 @@ const findPost=(postId:number)=>{
     }
 }
 
-console.log("findPOst 1",findPost(1));
+// console.log("findPOst 1",findPost(1));
 
-const GettingAllPost = (): Ipost[] => {
-    return postArray;
+const GettingAllPost = (arr:IPost[]): IPost[] => {
+    return arr;
 }
-console.log(GettingAllPost);
+console.log(GettingAllPost(postArray));
 
 const postIdToRemove = 3;
 export const removepost = (postId: number)=>{
@@ -46,5 +46,5 @@ export const removepost = (postId: number)=>{
    return removeElement;
 }
 
-console.log(removepost(postIdToRemove));
+// console.log(removepost(postIdToRemove));
    
